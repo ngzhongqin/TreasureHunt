@@ -1,0 +1,2 @@
+include ':app', ':Parse-1.7.1', ':facebook'
+project(':facebook').projectDir = new File('app/libs/facebook')
