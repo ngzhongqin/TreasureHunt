@@ -25,13 +25,13 @@ public class ViewPagerHandler {
                 Log.d(TAG, "page: " + index);
                 switch (index){
                     case 0:
-                        actionBarHandler.set_home_btn_active();
+                        actionBarHandler.set_map_btn_active();
                         break;
                     case 1:
-                        actionBarHandler.set_friends_btn_active();
+                        actionBarHandler.set_treasure_btn_active();
                         break;
                     case 2:
-                        actionBarHandler.set_points_btn_active();
+                        actionBarHandler.set_friends_btn_active();
                         break;
                 }
 

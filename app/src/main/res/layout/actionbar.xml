@@ -44,7 +44,7 @@
                 android:layout_weight="1"
                 android:layout_height="1dp"/>
             <ImageButton
-                android:id="@+id/home_btn"
+                android:id="@+id/map_btn"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
@@ -52,7 +52,7 @@
                 android:layout_width="60dp"
                 android:src="@drawable/map_select_s" />
             <ImageButton
-                android:id="@+id/friends_btn"
+                android:id="@+id/treasure_btn"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
@@ -60,7 +60,7 @@
                 android:layout_width="60dp"
                 android:src="@drawable/treasure_grey_s" />
             <ImageButton
-                android:id="@+id/points_btn"
+                android:id="@+id/friends_btn"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:layout_width="60dp"

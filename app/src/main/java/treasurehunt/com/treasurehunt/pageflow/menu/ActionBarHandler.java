@@ -32,9 +32,9 @@ public class ActionBarHandler {
     }
 
     class ActionBarViewHolder{
-        ImageButton home_btn;
+        ImageButton map_btn;
+        ImageButton treasure_btn;
         ImageButton friends_btn;
-        ImageButton points_btn;
         TextView user_id;
         LinearLayout spinner_placeholder;
 
@@ -61,27 +61,27 @@ public class ActionBarHandler {
 
 
 
-    private void set_home_btn_selected(boolean selected){
+    private void set_map_btn_selected(boolean selected){
         if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn, R.drawable.map_select_s);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.map_btn, R.drawable.map_select_s);
         }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn,R.drawable.map_grey_s);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.map_btn,R.drawable.map_grey_s);
+        }
+    }
+
+    private void set_treasure_btn_selected(boolean selected){
+        if(selected){
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.treasure_btn,R.drawable.treasure_select_s);
+        }else{
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.treasure_btn,R.drawable.treasure_grey_s);
         }
     }
 
     private void set_friends_btn_selected(boolean selected){
         if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.treasure_select_s);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.friends_select_s);
         }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.treasure_grey_s);
-        }
-    }
-
-    private void set_points_btn_selected(boolean selected){
-        if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.friends_select_s);
-        }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.friends_grey_s);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.friends_grey_s);
         }
     }
 
@@ -95,9 +95,9 @@ public class ActionBarHandler {
         actionBar.setDisplayOptions(actionBar.DISPLAY_SHOW_CUSTOM);
         cView = mActivity.getLayoutInflater().inflate(R.layout.actionbar, null);
 
-        actionBarViewHolder.home_btn = assetHandler.imageButtonHandler.set(cView,R.id.home_btn);
+        actionBarViewHolder.map_btn = assetHandler.imageButtonHandler.set(cView,R.id.map_btn);
+        actionBarViewHolder.treasure_btn = assetHandler.imageButtonHandler.set(cView,R.id.treasure_btn);
         actionBarViewHolder.friends_btn = assetHandler.imageButtonHandler.set(cView,R.id.friends_btn);
-        actionBarViewHolder.points_btn = assetHandler.imageButtonHandler.set(cView,R.id.points_btn);
         actionBarViewHolder.user_id = assetHandler.textViewHandler.set(cView,R.id.user_id);
         actionBarViewHolder.spinner_placeholder = assetHandler.linearLayoutHandler.set(cView,R.id.spinner_placeholder);
 
@@ -107,13 +107,25 @@ public class ActionBarHandler {
     }
 
     public void setMenuButtonsWithViewPager(){
-        actionBarViewHolder.home_btn.setOnClickListener(new View.OnClickListener() {
+        actionBarViewHolder.map_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Log.d(TAG, "actionBarViewHolder.home_btn.setOnClickListener");
+                Log.d(TAG, "actionBarViewHolder.map_btn.setOnClickListener");
 //                Toast.makeText(mActivity.getApplicationContext(), "Home Btn", Toast.LENGTH_SHORT).show();
-                set_home_btn_active();
+                set_map_btn_active();
                 pager.setCurrentItem(0);
+
+            }
+        });
+
+
+        actionBarViewHolder.treasure_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Log.d(TAG, "actionBarViewHolder.friends_btn.setOnClickListener");
+//                Toast.makeText(mActivity.getApplicationContext(), "Friends Btn", Toast.LENGTH_SHORT).show();
+                set_treasure_btn_active();
+                pager.setCurrentItem(1);
 
             }
         });
@@ -122,43 +134,31 @@ public class ActionBarHandler {
         actionBarViewHolder.friends_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Log.d(TAG, "actionBarViewHolder.friends_btn.setOnClickListener");
-//                Toast.makeText(mActivity.getApplicationContext(), "Friends Btn", Toast.LENGTH_SHORT).show();
-                set_friends_btn_active();
-                pager.setCurrentItem(1);
-
-            }
-        });
-
-
-        actionBarViewHolder.points_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
                 Log.d(TAG, "actionBarViewHolder.points_btn.setOnClickListener");
 //                Toast.makeText(mActivity.getApplicationContext(), "Points Btn", Toast.LENGTH_SHORT).show();
-                set_points_btn_active();
+                set_friends_btn_active();
                 pager.setCurrentItem(2);
 
             }
         });
     }
 
-    public void set_home_btn_active(){
-        set_home_btn_selected(true);
+    public void set_map_btn_active(){
+        set_map_btn_selected(true);
+        set_treasure_btn_selected(false);
         set_friends_btn_selected(false);
-        set_points_btn_selected(false);
+    }
+
+    public void set_treasure_btn_active(){
+        set_map_btn_selected(false);
+        set_treasure_btn_selected(true);
+        set_friends_btn_selected(false);
     }
 
     public void set_friends_btn_active(){
-        set_home_btn_selected(false);
+        set_map_btn_selected(false);
+        set_treasure_btn_selected(false);
         set_friends_btn_selected(true);
-        set_points_btn_selected(false);
-    }
-
-    public void set_points_btn_active(){
-        set_home_btn_selected(false);
-        set_friends_btn_selected(false);
-        set_points_btn_selected(true);
     }
 
     public void setActionBarHandlerAfterWebServiceCall(String user_id) {
