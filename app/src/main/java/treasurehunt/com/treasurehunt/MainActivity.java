@@ -39,9 +39,9 @@ public class MainActivity extends FragmentActivity {
 
         List<Fragment> fList = new ArrayList<Fragment>();
 
-//        fList.add(HomeFragment.newInstance("1"));
-//        fList.add(MyFragment.newInstance("2"));
-//        fList.add(MyFragment.newInstance("3"));
+        fList.add(MyFragment.newInstance("1"));
+        fList.add(MyFragment.newInstance("2"));
+        fList.add(MyFragment.newInstance("3"));
 
         return fList;
     }
