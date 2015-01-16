@@ -63,25 +63,25 @@ public class ActionBarHandler {
 
     private void set_home_btn_selected(boolean selected){
         if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn, R.drawable.home_u);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn, R.drawable.map_select_s);
         }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn,R.drawable.home_grey);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.home_btn,R.drawable.map_grey_s);
         }
     }
 
     private void set_friends_btn_selected(boolean selected){
         if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.friends_u);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.treasure_select_s);
         }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.friends_grey);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.friends_btn,R.drawable.treasure_grey_s);
         }
     }
 
     private void set_points_btn_selected(boolean selected){
         if(selected){
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.points_u);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.friends_select_s);
         }else{
-            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.points_grey);
+            assetHandler.imageButtonHandler.setImageButtonImageResource(actionBarViewHolder.points_btn,R.drawable.friends_grey_s);
         }
     }
 

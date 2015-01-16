@@ -50,7 +50,7 @@
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:layout_width="60dp"
-                android:src="@drawable/home_u" />
+                android:src="@drawable/map_select_s" />
             <ImageButton
                 android:id="@+id/friends_btn"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:layout_width="60dp"
-                android:src="@drawable/friends_grey" />
+                android:src="@drawable/treasure_grey_s" />
             <ImageButton
                 android:id="@+id/points_btn"
                 android:scaleType="fitCenter"
@@ -66,7 +66,7 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/points_grey" />
+                android:src="@drawable/friends_grey_s" />
         </LinearLayout>
 
     </LinearLayout>
