@@ -11,6 +11,7 @@ import java.util.List;
 import treasurehunt.com.treasurehunt.pageflow.MyPageAdapter;
 import treasurehunt.com.treasurehunt.pageflow.ViewPagerHandler;
 import treasurehunt.com.treasurehunt.pageflow.menu.ActionBarHandler;
+import treasurehunt.com.treasurehunt.treasure.TreasureFragment;
 
 public class MainActivity extends FragmentActivity {
     private String TAG = "MainActivity";
@@ -40,7 +41,7 @@ public class MainActivity extends FragmentActivity {
         List<Fragment> fList = new ArrayList<Fragment>();
 
         fList.add(MyFragment.newInstance("1"));
-        fList.add(MyFragment.newInstance("2"));
+        fList.add(TreasureFragment.newInstance("2"));
         fList.add(MyFragment.newInstance("3"));
 
         return fList;
