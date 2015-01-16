@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/user_id"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:text="ID:"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/spinner_placeholder"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    style="?android:attr/progressBarStyleSmallTitle"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"/>
+            <ImageButton
+                android:id="@+id/home_btn"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="60dp"
+                android:src="@drawable/home_u" />
+            <ImageButton
+                android:id="@+id/friends_btn"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="60dp"
+                android:src="@drawable/friends_grey" />
+            <ImageButton
+                android:id="@+id/points_btn"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/points_grey" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="1dp"/>
+
+</LinearLayout>
+

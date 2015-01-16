@@ -1,36 +1,51 @@
 package treasurehunt.com.treasurehunt;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends Activity {
+import treasurehunt.com.treasurehunt.pageflow.MyPageAdapter;
+import treasurehunt.com.treasurehunt.pageflow.ViewPagerHandler;
+import treasurehunt.com.treasurehunt.pageflow.menu.ActionBarHandler;
+
+public class MainActivity extends FragmentActivity {
+    private String TAG = "MainActivity";
+    private MyPageAdapter pageAdapter;
+    private ActionBarHandler actionBarHandler;
+    private ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_a);
+        setContentView(R.layout.activity_main);
+        List<Fragment> fragments = getFragments();
+        pageAdapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
+        actionBarHandler = new ActionBarHandler(this, pager);
+        actionBarHandler.restoreActionBar();
+        pager = (ViewPager)findViewById(R.id.viewpager);
+        ViewPagerHandler viewPagerHandler = new ViewPagerHandler();
+        viewPagerHandler.setPagerOnPageChangeListener(pager,actionBarHandler);
+        pager.setAdapter(pageAdapter);
+        actionBarHandler.setPager(pager);
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+
+    public List<Fragment> getFragments() {
+
+        List<Fragment> fList = new ArrayList<Fragment>();
+
+//        fList.add(HomeFragment.newInstance("1"));
+//        fList.add(MyFragment.newInstance("2"));
+//        fList.add(MyFragment.newInstance("3"));
+
+        return fList;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
+
 }
