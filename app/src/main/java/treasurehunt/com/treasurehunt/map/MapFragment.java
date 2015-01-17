@@ -9,13 +9,17 @@ import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.ParseGeoPoint;
+
+import java.util.ArrayList;
 
 import treasurehunt.com.treasurehunt.R;
 import treasurehunt.com.treasurehunt.util.assetHandler.AssetHandler;
 import treasurehunt.com.treasurehunt.util.location.LocationHandler;
+import treasurehunt.com.treasurehunt.vo.TreasureVO;
 
 
 public class MapFragment extends Fragment {
@@ -25,6 +29,48 @@ public class MapFragment extends Fragment {
     private AssetHandler assetHandler;
     private ViewHolder vh;
     private GoogleMap map;
+
+    public void createMarkers(final ArrayList<TreasureVO> treasureVOArrayList) {
+
+
+        vh.mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+                googleMap.setMyLocationEnabled(true);
+
+                set_markers(googleMap, treasureVOArrayList);
+//                googleMap.addMarker(new MarkerOptions()
+//                        .position(new LatLng(1.378316, 103.949033))
+//                        .title("Gallop Stable"));
+            }
+        });
+    }
+
+    private void set_markers(GoogleMap googleMap, ArrayList<TreasureVO> treasureVOArrayList) {
+        if(treasureVOArrayList!=null){
+            int i = 0;
+            int size_i = treasureVOArrayList.size();
+
+            while(i<size_i){
+                if(treasureVOArrayList.get(i)!=null){
+                    if(treasureVOArrayList.get(i).getName()!=null){
+                        if(treasureVOArrayList.get(i).getLocation()!=null){
+                            String name = treasureVOArrayList.get(i).getName();
+                            Double lat = treasureVOArrayList.get(i).getLocation().getLatitude();
+                            Double logi = treasureVOArrayList.get(i).getLocation().getLongitude();
+
+                            googleMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(lat, logi))
+                                    .title(name));
+
+                        }
+                    }
+                }
+                i++;
+            }
+        }
+    }
 
     class ViewHolder{
         LinearLayout treasure_list;
@@ -46,23 +92,12 @@ public class MapFragment extends Fragment {
         String message = getArguments().getString(EXTRA_MESSAGE);
         v = inflater.inflate(R.layout.map_f, container, false);
         vh = new ViewHolder();
+        MapWebService mapWebService = new MapWebService(this);
+        mapWebService.get_all_treasure(getCurrentLocation());
         assetHandler = new AssetHandler(getActivity());
         vh.mapView=assetHandler.mapViewHandler.set(v,R.id.mapview);
         vh.mapView.onCreate(savedInstanceState);
 
-        vh.mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-                googleMap.setMyLocationEnabled(true);
-                // Needs to call MapsInitializer before doing any CameraUpdateFactory calls
-                try {
-                    MapsInitializer.initialize(getActivity());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
         return v;
     }
 
