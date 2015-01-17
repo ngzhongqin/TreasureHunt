@@ -115,7 +115,7 @@ public class LoginActivity extends Activity {
         Log.i(TAG,"prints_key_hash_needed_for_facebook");
         //This piece of code prints the key hash for upload to facebook app
         try {
-            PackageInfo info = getPackageManager().getPackageInfo("getmore.com.getmore", PackageManager.GET_SIGNATURES);
+            PackageInfo info = getPackageManager().getPackageInfo("treasurehunt.com.treasurehunt", PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());

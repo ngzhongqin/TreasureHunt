@@ -16,6 +16,7 @@ public class AssetHandler {
     public ImageViewHandler imageViewHandler;
     public ButtonHandler buttonHandler;
     public SmartImageViewHandler smartImageViewHandler;
+    public MapViewHandler mapViewHandler;
 
     public AssetHandler(FragmentActivity fragmentActivity){
         frameLayoutHandler =new FrameLayoutHandler();
@@ -27,5 +28,6 @@ public class AssetHandler {
         imageViewHandler=new ImageViewHandler();
         buttonHandler=new ButtonHandler();
         smartImageViewHandler=new SmartImageViewHandler();
+        mapViewHandler=new MapViewHandler();
     }
 }
