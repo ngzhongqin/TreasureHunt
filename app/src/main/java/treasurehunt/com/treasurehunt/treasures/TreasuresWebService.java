@@ -1,4 +1,4 @@
-package treasurehunt.com.treasurehunt.treasure;
+package treasurehunt.com.treasurehunt.treasures;
 
 import android.util.Log;
 
@@ -18,14 +18,14 @@ import treasurehunt.com.treasurehunt.vo.TreasureVO;
 /**
  * Created by zhongqinng on 1/1/15.
  */
-public class TreasureWebService {
+public class TreasuresWebService {
 
     private static final String TAG = "TreasureWebService";
-    private TreasureFragment treasureFragment;
+    private TreasuresFragment treasuresFragment;
     private JsonHandler jsonHandler;
 
-    public TreasureWebService(TreasureFragment treasureFragment){
-        this.treasureFragment=treasureFragment;
+    public TreasuresWebService(TreasuresFragment treasuresFragment){
+        this.treasuresFragment = treasuresFragment;
         this.jsonHandler=new JsonHandler();
     }
 
@@ -63,7 +63,7 @@ public class TreasureWebService {
                         i++;
                     }
 
-                    treasureFragment.createTreasureList(treasureVOArrayList);
+                    treasuresFragment.createTreasureList(treasureVOArrayList);
 
                 } else {
                     Log.i(TAG, "treasure_all: EXCEPTION: " + e.getMessage());

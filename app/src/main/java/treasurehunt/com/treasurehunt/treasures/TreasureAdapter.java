@@ -1,6 +1,7 @@
-package treasurehunt.com.treasurehunt.treasure;
+package treasurehunt.com.treasurehunt.treasures;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import treasurehunt.com.treasurehunt.R;
+import treasurehunt.com.treasurehunt.activity.treasure.TreasureActivity;
 import treasurehunt.com.treasurehunt.util.assetHandler.AssetHandler;
 import treasurehunt.com.treasurehunt.vo.TreasureVO;
 
@@ -81,9 +83,9 @@ public class TreasureAdapter extends ArrayAdapter<TreasureVO> {
         return convertView;
     }
 
-    private void navigator_to_treasure(String shop_id){
-//        Intent myIntent = new Intent(mActivity, StoreFrontGuestActivity.class);
-//        myIntent.putExtra("shop_id", shop_id); //Optional parameters
-//        mActivity.startActivity(myIntent);
+    private void navigator_to_treasure(String treasure_id){
+        Intent myIntent = new Intent(mActivity, TreasureActivity.class);
+        myIntent.putExtra("treasure_id", treasure_id); //Optional parameters
+        mActivity.startActivity(myIntent);
     }
 }

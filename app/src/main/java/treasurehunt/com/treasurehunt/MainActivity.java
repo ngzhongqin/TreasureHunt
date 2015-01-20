@@ -13,7 +13,7 @@ import treasurehunt.com.treasurehunt.newsfeed.NewsfeedFragment;
 import treasurehunt.com.treasurehunt.pageflow.MyPageAdapter;
 import treasurehunt.com.treasurehunt.pageflow.ViewPagerHandler;
 import treasurehunt.com.treasurehunt.pageflow.menu.ActionBarHandler;
-import treasurehunt.com.treasurehunt.treasure.TreasureFragment;
+import treasurehunt.com.treasurehunt.treasures.TreasuresFragment;
 
 public class MainActivity extends FragmentActivity {
     private String TAG = "MainActivity";
@@ -43,7 +43,7 @@ public class MainActivity extends FragmentActivity {
         List<Fragment> fList = new ArrayList<Fragment>();
 
         fList.add(MapFragment.newInstance("1"));
-        fList.add(TreasureFragment.newInstance("2"));
+        fList.add(TreasuresFragment.newInstance("2"));
         fList.add(NewsfeedFragment.newInstance("3"));
 
         return fList;

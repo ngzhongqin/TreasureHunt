@@ -37,6 +37,20 @@ public class TreasureVO {
         this.photo_url=photo_url;
     }
 
+    public TreasureVO (String id,
+                       String name,
+                       String clue,
+                       Number points,
+                       ParseGeoPoint location,
+                       String photo_url){
+        this.id=id;
+        this.name=name;
+        this.clue=clue;
+        this.points=points;
+        this.location=location;
+        this.photo_url=photo_url;
+    }
+
     public String getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package treasurehunt.com.treasurehunt.treasure;
+package treasurehunt.com.treasurehunt.treasures;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +17,7 @@ import treasurehunt.com.treasurehunt.util.location.LocationHandler;
 import treasurehunt.com.treasurehunt.vo.TreasureVO;
 
 
-public class TreasureFragment extends Fragment {
+public class TreasuresFragment extends Fragment {
     private String TAG = "TreasureFragment";
     public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
     private View v;
@@ -29,9 +29,9 @@ public class TreasureFragment extends Fragment {
         LinearLayout spinner_placeholder;
     }
 
-    public static final TreasureFragment newInstance(String message)
+    public static final TreasuresFragment newInstance(String message)
     {
-        TreasureFragment f = new TreasureFragment();
+        TreasuresFragment f = new TreasuresFragment();
         Bundle bdl = new Bundle(1);
         bdl.putString(EXTRA_MESSAGE, message);
         f.setArguments(bdl);
@@ -43,7 +43,7 @@ public class TreasureFragment extends Fragment {
         String message = getArguments().getString(EXTRA_MESSAGE);
         v = inflater.inflate(R.layout.treasure_f, container, false);
         initialise();
-        TreasureWebService treasureWebService = new TreasureWebService(this);
+        TreasuresWebService treasureWebService = new TreasuresWebService(this);
         treasureWebService.get_all_treasure(getCurrentLocation());
         return v;
     }
