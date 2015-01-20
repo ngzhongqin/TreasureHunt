@@ -78,6 +78,235 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_weight="85"
+                            android:id="@+id/word1"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_modified_states"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength ="25"
+                            android:scrollHorizontally="false"
+                            android:hint="Word 1"
+                            android:imeOptions="actionDone"/>
+
+                        <ImageButton
+                            android:id="@+id/submit_1"
+                            android:src="@drawable/submit"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:adjustViewBounds="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="15"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_weight="85"
+                            android:id="@+id/word2"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_modified_states"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength ="25"
+                            android:scrollHorizontally="false"
+                            android:hint="Word 2"
+                            android:imeOptions="actionDone"/>
+
+                        <ImageButton
+                            android:id="@+id/submit_2"
+                            android:src="@drawable/submit"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:adjustViewBounds="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="15"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_weight="85"
+                            android:id="@+id/word3"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_modified_states"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength ="25"
+                            android:scrollHorizontally="false"
+                            android:hint="Word 3"
+                            android:imeOptions="actionDone"/>
+
+                        <ImageButton
+                            android:id="@+id/submit_3"
+                            android:src="@drawable/submit"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:adjustViewBounds="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="15"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_weight="85"
+                            android:id="@+id/word4"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_modified_states"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength ="25"
+                            android:scrollHorizontally="false"
+                            android:hint="Word 4"
+                            android:imeOptions="actionDone"/>
+
+                        <ImageButton
+                            android:id="@+id/submit_4"
+                            android:src="@drawable/submit"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:adjustViewBounds="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="15"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_weight="85"
+                            android:id="@+id/word5"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_modified_states"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength ="25"
+                            android:scrollHorizontally="false"
+                            android:hint="Word 5"
+                            android:imeOptions="actionDone"/>
+
+                        <ImageButton
+                            android:id="@+id/submit_5"
+                            android:src="@drawable/submit"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:adjustViewBounds="true"
+                            android:layout_width="0dp"
+                            android:layout_weight="15"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"/>
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
