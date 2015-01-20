@@ -97,6 +97,7 @@ public class UserDetailsActivity extends Activity {
                                 currentUser.put("name", userProfile.getString("name"));
                                 currentUser.put("email", userProfile.getString("email"));
                                 currentUser.put("facebookId", userProfile.getString("facebookId"));
+
                                 currentUser.saveInBackground();
 
                                 // Show the user info

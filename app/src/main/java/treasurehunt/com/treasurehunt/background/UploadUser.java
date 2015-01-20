@@ -41,6 +41,9 @@ public class UploadUser{
                                 currentUser.put("name", userProfile.getString("name"));
                                 currentUser.put("email", userProfile.getString("email"));
                                 currentUser.put("facebookId", userProfile.getString("facebookId"));
+                                String  facebookPhotoURL = "https://graph.facebook.com/"+userProfile.getString("facebookId")+"/picture?type=large";
+                                Log.i(TAG,"facebookPhotoURL:"+facebookPhotoURL);
+                                currentUser.put("photo_url", facebookPhotoURL);
                                 currentUser.saveInBackground();
 
                             } catch (JSONException e) {

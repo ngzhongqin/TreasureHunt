@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -28,7 +27,6 @@ public class MapFragment extends Fragment {
     private View v;
     private AssetHandler assetHandler;
     private ViewHolder vh;
-    private GoogleMap map;
 
     public void createMarkers(final ArrayList<TreasureVO> treasureVOArrayList) {
 
@@ -40,9 +38,6 @@ public class MapFragment extends Fragment {
                 googleMap.setMyLocationEnabled(true);
 
                 set_markers(googleMap, treasureVOArrayList);
-//                googleMap.addMarker(new MarkerOptions()
-//                        .position(new LatLng(1.378316, 103.949033))
-//                        .title("Gallop Stable"));
             }
         });
     }
@@ -73,8 +68,6 @@ public class MapFragment extends Fragment {
     }
 
     class ViewHolder{
-        LinearLayout treasure_list;
-        LinearLayout spinner_placeholder;
         MapView mapView;
     }
 

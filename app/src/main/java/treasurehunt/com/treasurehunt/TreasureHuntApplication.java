@@ -22,6 +22,11 @@ public class TreasureHuntApplication extends Application{
         String PARSE_CLIENT_ID ="6kIjkIJ1hVH3s9SZpTlILKn94XPGTB9sqDz5gxcA";
         String FACEBOOK_APP_ID = "327369334135631";
 
+//        //PROD
+//        String PARSE_APPLICATION_ID = "69biQbV97YaBt7vLNVF68a0GXg8KqVX64xkez3g3";
+//        String PARSE_CLIENT_ID ="xBneYs1YBRGPZbIKVo0BNiBpRbRnLOg2bPPTBu8Y";
+//        String FACEBOOK_APP_ID = "341101996092176";
+
 
 
         Parse.initialize(this,

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import treasurehunt.com.treasurehunt.map.MapFragment;
+import treasurehunt.com.treasurehunt.newsfeed.NewsfeedFragment;
 import treasurehunt.com.treasurehunt.pageflow.MyPageAdapter;
 import treasurehunt.com.treasurehunt.pageflow.ViewPagerHandler;
 import treasurehunt.com.treasurehunt.pageflow.menu.ActionBarHandler;
@@ -43,7 +44,7 @@ public class MainActivity extends FragmentActivity {
 
         fList.add(MapFragment.newInstance("1"));
         fList.add(TreasureFragment.newInstance("2"));
-        fList.add(MyFragment.newInstance("3"));
+        fList.add(NewsfeedFragment.newInstance("3"));
 
         return fList;
     }
