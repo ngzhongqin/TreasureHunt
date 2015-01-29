@@ -5,6 +5,7 @@ import android.util.Log;
 import com.parse.ParseGeoPoint;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 /**
  * Created by zhongqinng on 17/1/15.
@@ -20,6 +21,7 @@ public class TreasureVO {
     private String photo_url;
     private String points_string;
     private String distance_string;
+    private ArrayList<WordVO> word_list;
 
     public TreasureVO (String id,
                        String name,
@@ -143,5 +145,13 @@ public class TreasureVO {
             }
         }
         return returnString;
+    }
+
+    public ArrayList<WordVO> getWord_list() {
+        return word_list;
+    }
+
+    public void setWord_list(ArrayList<WordVO> word_list) {
+        this.word_list = word_list;
     }
 }

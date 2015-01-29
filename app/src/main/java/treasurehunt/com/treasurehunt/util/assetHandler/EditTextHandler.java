@@ -57,6 +57,17 @@ public class EditTextHandler {
         }
     }
 
+    public void setEnable(EditText editText,boolean enable){
+
+        try {
+            editText.setEnabled(enable);
+        }catch (Exception e){
+            Log.e(TAG, "setEnable:" + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
     public boolean checkVisible(EditText editText) {
         boolean returnBol = false;
         if (editText != null) {
@@ -97,5 +108,18 @@ public class EditTextHandler {
                 e.printStackTrace();
             }
         }
+    }
+
+    public String getStringFromEditText(EditText editText) {
+        String text = null;
+        if (editText != null) {
+            Editable editable = editText.getText();
+            if (editable != null) {
+
+                text = editText.getText().toString();
+                Log.i(TAG,"word = "+editText.getText());
+            }
+        }
+        return text;
     }
 }

@@ -41,7 +41,7 @@ public class TreasuresFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         String message = getArguments().getString(EXTRA_MESSAGE);
-        v = inflater.inflate(R.layout.treasure_f, container, false);
+        v = inflater.inflate(R.layout.treasures_f, container, false);
         initialise();
         TreasuresWebService treasureWebService = new TreasuresWebService(this);
         treasureWebService.get_all_treasure(getCurrentLocation());

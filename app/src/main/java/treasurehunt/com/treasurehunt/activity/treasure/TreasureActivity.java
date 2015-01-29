@@ -3,20 +3,28 @@ package treasurehunt.com.treasurehunt.activity.treasure;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 import treasurehunt.com.treasurehunt.R;
 import treasurehunt.com.treasurehunt.util.assetHandler.AssetHandler;
 import treasurehunt.com.treasurehunt.vo.TreasureVO;
+import treasurehunt.com.treasurehunt.vo.WordVO;
 
 
 public class TreasureActivity extends FragmentActivity {
@@ -44,7 +52,18 @@ public class TreasureActivity extends FragmentActivity {
             }
         });
 
+        createWordList(treasureVO.getWord_list());
 
+        vh.submit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                    String word = ah.editTextHandler.getStringFromEditText(vh.answer);
+                    treasureWebService.submit_word(treasureVO.getId(),word);
+                    ah.keyBoardHandler.hide_keyboard();
+                    ah.editTextHandler.clearText(vh.answer);
+                }
+
+        });
     }
 
     class ViewHolder{
@@ -54,6 +73,9 @@ public class TreasureActivity extends FragmentActivity {
         TextView clue;
         ImageView photo;
         TextView points;
+        LinearLayout word_list;
+        EditText answer;
+        ImageButton submit_btn;
     }
 
     @Override
@@ -67,6 +89,11 @@ public class TreasureActivity extends FragmentActivity {
         initialise_assets(savedInstanceState);
         treasureWebService = new TreasureWebService(this);
         treasureWebService.get_treasure(treasure_id);
+        try {
+            MapsInitializer.initialize(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialise_assets(Bundle savedInstanceState){
@@ -77,6 +104,9 @@ public class TreasureActivity extends FragmentActivity {
         vh.clue = ah.textViewHandler.set(this,R.id.clue);
         vh.photo = ah.imageViewHandler.set(this,R.id.photo);
         vh.points = ah.textViewHandler.set(this,R.id.points);
+        vh.word_list = ah.linearLayoutHandler.set(this,R.id.word_list);
+        vh.answer = ah.editTextHandler.set(this,R.id.answer);
+        vh.submit_btn = ah.imageButtonHandler.set(this,R.id.submit_btn);
 
         vh.mapView.onCreate(savedInstanceState);
         vh.mapView.getMapAsync(new OnMapReadyCallback() {
@@ -129,10 +159,40 @@ public class TreasureActivity extends FragmentActivity {
                     googleMap.addMarker(new MarkerOptions()
                             .position(new LatLng(lat, logi))
                             .title(name));
-
+                    moveToCurrentLocation(googleMap,new LatLng(lat, logi));
                 }
             }
         }
+
+    }
+
+
+    public void createWordList(ArrayList<WordVO> arrayList) {
+        ah.linearLayoutHandler.removeAllViews(vh.word_list);
+        WordAdapter adapter = new WordAdapter(this,this, R.id.treasure_i_word_panel_content,this.treasureVO.getId());
+        for (WordVO item : arrayList) {
+            adapter.add(item);
+        }
+
+        int i = 0;
+        int size = adapter.getCount();
+        while(i<size){
+            View itemView = adapter.getView(i,null,null);
+            vh.word_list.addView(itemView);
+            i++;
+        }
+
+    }
+
+    private void moveToCurrentLocation(GoogleMap googleMap, LatLng currentLocation)
+    {
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15));
+        // Zoom in, animating the camera.
+        googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+        // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+
 
     }
 }

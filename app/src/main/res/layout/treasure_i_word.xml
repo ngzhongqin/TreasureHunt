@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/treasure_i_word_panel_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="85"
+            android:id="@+id/word"
+            android:textSize="26sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_modified_states"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength ="25"
+            android:scrollHorizontally="false"
+            android:hint=""
+            android:imeOptions="actionDone"/>
+
+        <ImageButton
+            android:id="@+id/submit_btn"
+            android:src="@drawable/cross"
+            android:scaleType="fitCenter"
+            android:background="@color/white"
+            android:adjustViewBounds="true"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="1dp"
+        android:background="@color/light_grey"/>
+
+
+</LinearLayout>

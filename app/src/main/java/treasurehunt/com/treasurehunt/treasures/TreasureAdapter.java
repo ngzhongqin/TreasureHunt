@@ -50,7 +50,7 @@ public class TreasureAdapter extends ArrayAdapter<TreasureVO> {
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         if (convertView == null) {
-            convertView = mLayoutInflater.inflate(R.layout.treasure_i_treasure, parent, false);
+            convertView = mLayoutInflater.inflate(R.layout.treasures_i_treasure, parent, false);
             vh = new ViewHolder();
 
             vh.name = assetHandler.textViewHandler.set(convertView,R.id.name);

@@ -7,10 +7,12 @@ import com.parse.ParseCloud;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import treasurehunt.com.treasurehunt.util.JsonHandler;
 import treasurehunt.com.treasurehunt.vo.TreasureVO;
+import treasurehunt.com.treasurehunt.vo.WordVO;
 
 
 /**
@@ -23,6 +25,10 @@ public class TreasureWebService {
 
     public TreasureWebService(TreasureActivity mActivity){
         this.mActivity=mActivity;
+        this.jsonHandler=new JsonHandler();
+    }
+
+    public TreasureWebService(){
         this.jsonHandler=new JsonHandler();
     }
 
@@ -44,6 +50,20 @@ public class TreasureWebService {
                     ParseGeoPoint location = jsonHandler.getGeoPoint(treasure, "location");
                     TreasureVO treasureVO = new TreasureVO(id,name,clue,points,location,photo_url);
 
+                    ArrayList<HashMap<String,Object>> submission = jsonHandler.getArrayList("submission", result);
+                    if(submission!=null){
+                        ArrayList<WordVO> word_list =  new ArrayList<WordVO>();
+                        int i = 0;
+                        int size = submission.size();
+                        while(i<size){
+                            String word = jsonHandler.getString(submission.get(i), "word");
+                            WordVO wordVO = new WordVO(word);
+                            word_list.add(wordVO);
+                            i++;
+                        }
+                        treasureVO.setWord_list(word_list);
+                    }
+
 
                     mActivity.setTreasureVO(treasureVO);
 
@@ -54,19 +74,45 @@ public class TreasureWebService {
         });
     }
 
-//    public void join_as_member(String shop_id) {
-//        HashMap<String, Object> params = new HashMap<String, Object>();
-//        params.put("shop_id",shop_id);
-//
-//        ParseCloud.callFunctionInBackground("cx_join_as_member", params, new FunctionCallback<HashMap<String, Object>>() {
-//            public void done(HashMap<String, Object> result, ParseException e) {
-//                if (e == null) {
-//                    Log.i(TAG, "cx_join_as_member: okay");
-//
-//                } else {
-//                    Log.i(TAG, "cx_join_as_member: EXCEPTION: " + e.getMessage());
-//                }
-//            }
-//        });
-//    }
+    public void submit_word(String treasure_id,String word) {
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("treasure_id",treasure_id);
+        params.put("word",word);
+        ParseCloud.callFunctionInBackground("submit_word", params, new FunctionCallback<HashMap<String, Object>>() {
+            public void done(HashMap<String, Object> result, ParseException e) {
+                if (e == null) {
+                    Log.i(TAG, "submit_word: okay");
+                    HashMap<String, Object> treasure = jsonHandler.getHashMapStringObject("treasure", result);
+
+                    String id = jsonHandler.getString(treasure, "id");
+                    String name = jsonHandler.getString(treasure, "name");
+                    String clue = jsonHandler.getString(treasure, "clue");
+                    String photo_url = jsonHandler.getString(treasure, "photo_url");
+                    Number points = jsonHandler.getNumber(treasure, "points");
+                    ParseGeoPoint location = jsonHandler.getGeoPoint(treasure, "location");
+                    TreasureVO treasureVO = new TreasureVO(id,name,clue,points,location,photo_url);
+
+                    ArrayList<HashMap<String,Object>> submission = jsonHandler.getArrayList("submission", result);
+                    if(submission!=null){
+                        ArrayList<WordVO> word_list =  new ArrayList<WordVO>();
+                        int i = 0;
+                        int size = submission.size();
+                        while(i<size){
+                            String word = jsonHandler.getString(submission.get(i), "word");
+                            WordVO wordVO = new WordVO(word);
+                            word_list.add(wordVO);
+                            i++;
+                        }
+                        treasureVO.setWord_list(word_list);
+                    }
+
+
+                    mActivity.setTreasureVO(treasureVO);
+                } else {
+                    Log.i(TAG, "submit_word: EXCEPTION: " + e.getMessage());
+                }
+            }
+        });
+    }
+
 }
