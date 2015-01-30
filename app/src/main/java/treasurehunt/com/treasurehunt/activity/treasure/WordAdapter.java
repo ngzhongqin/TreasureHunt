@@ -1,7 +1,6 @@
 package treasurehunt.com.treasurehunt.activity.treasure;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ public class WordAdapter extends ArrayAdapter<WordVO> {
     private final String treasure_id;
     private ViewHolder vh;
     private Context context;
-    private FragmentActivity mActivity;
+    private TreasureActivity mActivity;
     private AssetHandler assetHandler;
 
     class ViewHolder {
@@ -34,7 +33,7 @@ public class WordAdapter extends ArrayAdapter<WordVO> {
 
     private final LayoutInflater mLayoutInflater;
 
-    public WordAdapter(FragmentActivity mActivity, final Context context, final int textViewResourceId, final String treasure_id) {
+    public WordAdapter(TreasureActivity mActivity, final Context context, final int textViewResourceId, final String treasure_id) {
         super(context, textViewResourceId);
         this.context = context;
         this.mActivity=mActivity;
@@ -78,7 +77,7 @@ public class WordAdapter extends ArrayAdapter<WordVO> {
             @Override
             public void onClick(final View v) {
                 if (getItem(position) != null) {
-                    TreasureWebService treasureWebService = new TreasureWebService();
+                    TreasureWebService treasureWebService = new TreasureWebService(mActivity);
 
                     String word = assetHandler.editTextHandler.getStringFromEditText(vh.word);
                     treasureWebService.submit_word(treasure_id,word);
