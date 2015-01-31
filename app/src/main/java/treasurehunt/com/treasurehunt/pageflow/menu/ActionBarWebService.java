@@ -8,15 +8,19 @@ import com.parse.ParseException;
 
 import java.util.HashMap;
 
+import treasurehunt.com.treasurehunt.util.JsonHandler;
+
 /**
  * Created by zhongqinng on 30/12/14.
  */
 public class ActionBarWebService {
     private String TAG = "ActionBarWebService";
     private ActionBarHandler actionBarHandler;
+    private JsonHandler jsonHandler;
 
     public ActionBarWebService(ActionBarHandler actionBarHandler){
         this.actionBarHandler=actionBarHandler;
+        this.jsonHandler=new JsonHandler();
     }
 
     public void landing_page(){
@@ -28,10 +32,10 @@ public class ActionBarWebService {
             public void done(HashMap<String, Object> result, ParseException e) {
                 if (e == null) {
                     Log.i(TAG, "landing_page: okay");
-                    if (result.get("user_id") != null) {
-                        String user_id = result.get("user_id").toString();
-                        actionBarHandler.setActionBarHandlerAfterWebServiceCall(user_id);
-                    }
+                    HashMap<String, Object> team = jsonHandler.getHashMapStringObject("team", result);
+                    String team_name = jsonHandler.getString(team,"team_name");
+                    actionBarHandler.setActionBarHandlerAfterWebServiceCall(team_name);
+
                 } else {
                     Log.i(TAG, "landing_page: exception " + e.getMessage());
                 }

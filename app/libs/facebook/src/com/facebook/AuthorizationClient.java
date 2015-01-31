@@ -49,7 +49,7 @@ class AuthorizationClient implements Serializable {
             "com.facebook.AuthorizationClient.WebViewAuthHandler.TOKEN_STORE_KEY";
     private static final String WEB_VIEW_AUTH_HANDLER_TOKEN_KEY = "TOKEN";
 
-    // Constants for logging login-related data. Some of these are only used by Session, but grouped here for
+    // Constants for logging treasurehunt.com.treasurehunt.login-related data. Some of these are only used by Session, but grouped here for
     // maintainability.
     private static final String EVENT_NAME_LOGIN_METHOD_START = "fb_mobile_login_method_start";
     private static final String EVENT_NAME_LOGIN_METHOD_COMPLETE = "fb_mobile_login_method_complete";

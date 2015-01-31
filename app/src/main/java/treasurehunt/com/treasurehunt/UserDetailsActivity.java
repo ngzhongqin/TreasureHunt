@@ -20,6 +20,8 @@ import com.parse.ParseUser;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import treasurehunt.com.treasurehunt.login.LoginActivity;
+
 public class UserDetailsActivity extends Activity {
 
     private String TAG = "UserDetailsActivity";
@@ -66,7 +68,7 @@ public class UserDetailsActivity extends Activity {
 			updateViewsWithProfileInfo();
 		} else {
 			// If the user is not logged in, go to the
-			// activity showing the login view.
+			// activity showing the treasurehunt.com.treasurehunt.login view.
 			startLoginActivity();
 		}
 	}
@@ -163,7 +165,7 @@ public class UserDetailsActivity extends Activity {
 		// Log the user out
 		ParseUser.logOut();
 
-		// Go to the login view
+		// Go to the treasurehunt.com.treasurehunt.login view
 		startLoginActivity();
 	}
 

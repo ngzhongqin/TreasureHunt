@@ -16,19 +16,64 @@ tools:context="com.winestory.LoginActivity">
         android:src="@drawable/logo"
         android:textStyle="bold"
         android:textSize="50sp"
-        android:gravity="center"/>
+        android:gravity="top"/>
 
-    <Button
-        android:id="@+id/loginButton"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginBottom="90dp"
-        android:text="Login"
-        android:textColor="#fff"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/button_login"
-        />
+        android:layout_height="wrap_content">
+
+        <!--<Button-->
+            <!--android:id="@+id/loginButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_marginBottom="15dp"-->
+            <!--android:text="Login"-->
+            <!--android:textColor="#fff"-->
+            <!--android:background="@drawable/button_login"-->
+            <!--/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginBottom="15dp"
+            android:layout_height="50dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="85"
+                android:id="@+id/team_code"
+                android:textSize="26sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_modified_states"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength ="5"
+                android:scrollHorizontally="false"
+                android:hint="Team Code"
+                android:imeOptions="actionDone"/>
+
+            <ImageButton
+                android:id="@+id/submit_btn"
+                android:src="@drawable/submit"
+                android:scaleType="fitCenter"
+                android:background="@color/white"
+                android:adjustViewBounds="true"
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
 
 </FrameLayout>
 

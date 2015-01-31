@@ -222,7 +222,7 @@ class FacebookFragment extends Fragment {
      *
      * @param applicationId the applicationID, can be null
      * @param permissions the permissions list, can be null
-     * @param behavior the login behavior to use with the session
+     * @param behavior the treasurehunt.com.treasurehunt.login behavior to use with the session
      * @param activityCode the activity code to use for the SSO activity
      */
     protected final void openSessionForRead(String applicationId, List<String> permissions,
@@ -250,7 +250,7 @@ class FacebookFragment extends Fragment {
      *
      * @param applicationId the applicationID, can be null
      * @param permissions the permissions list, cannot be null
-     * @param behavior the login behavior to use with the session
+     * @param behavior the treasurehunt.com.treasurehunt.login behavior to use with the session
      * @param activityCode the activity code to use for the SSO activity
      */
     protected final void openSessionForPublish(String applicationId, List<String> permissions,

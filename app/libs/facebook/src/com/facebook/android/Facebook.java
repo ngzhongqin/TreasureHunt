@@ -630,7 +630,7 @@ public class Facebook {
      *
      * @param context
      *            The Android context in which the logout should be called: it
-     *            should be the same context in which the login occurred in
+     *            should be the same context in which the treasurehunt.com.treasurehunt.login occurred in
      *            order to clear any stored cookies
      * @throws java.io.IOException
      * @throws java.net.MalformedURLException
@@ -815,7 +815,7 @@ public class Facebook {
      * @param context
      *            The Android context in which we will generate this dialog.
      * @param action
-     *            String representation of the desired method: e.g. "login",
+     *            String representation of the desired method: e.g. "treasurehunt.com.treasurehunt.login",
      *            "stream.publish", ...
      * @param listener
      *            Callback interface to notify the application when the dialog

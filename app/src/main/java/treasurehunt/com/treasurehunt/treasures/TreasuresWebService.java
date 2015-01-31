@@ -62,8 +62,11 @@ public class TreasuresWebService {
                         treasureVOArrayList.add(treasureVO);
                         i++;
                     }
-
-                    treasuresFragment.createTreasureList(treasureVOArrayList);
+                    try {
+                        treasuresFragment.createTreasureList(treasureVOArrayList);
+                    }catch (Exception e2){
+                        Log.e(TAG,"Exception: "+e2.getMessage());
+                    }
 
                 } else {
                     Log.i(TAG, "treasure_all: EXCEPTION: " + e.getMessage());

@@ -24,9 +24,9 @@ import android.view.View;
 import com.facebook.android.R;
 
 /**
- * This Activity is a necessary part of the overall Facebook login process
+ * This Activity is a necessary part of the overall Facebook treasurehunt.com.treasurehunt.login process
  * but is not meant to be used directly. Add this activity to your
- * AndroidManifest.xml to ensure proper handling of Facebook login.
+ * AndroidManifest.xml to ensure proper handling of Facebook treasurehunt.com.treasurehunt.login.
  * <pre>
  * {@code
  * <activity android:name="com.facebook.LoginActivity"

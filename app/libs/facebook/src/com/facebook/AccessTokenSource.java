@@ -26,12 +26,12 @@ public enum AccessTokenSource {
     NONE(false),
     /**
      * Indicates an access token was obtained by the user logging in through the
-     * Facebook app for Android using the web login dialog.
+     * Facebook app for Android using the web treasurehunt.com.treasurehunt.login dialog.
      */
     FACEBOOK_APPLICATION_WEB(true),
     /**
      * Indicates an access token was obtained by the user logging in through the
-     * Facebook app for Android using the native login dialog.
+     * Facebook app for Android using the native treasurehunt.com.treasurehunt.login dialog.
      */
     FACEBOOK_APPLICATION_NATIVE(true),
     /**

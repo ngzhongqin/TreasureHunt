@@ -490,7 +490,7 @@ public class Session implements Serializable {
      * this method should only be used if the application knows that the user has already granted
      * read permissions to the application; otherwise, openForRead should be used, followed by a
      * call to requestNewPublishPermissions. For more information on this flow, see
-     * https://developers.facebook.com/docs/facebook-login/permissions/.
+     * https://developers.facebook.com/docs/facebook-treasurehunt.com.treasurehunt.login/permissions/.
      * </p>
      * <p>
      * Any open method must be called at most once, and cannot be called after the
@@ -2139,7 +2139,7 @@ public class Session implements Serializable {
         }
 
         /**
-         * Sets the login behavior for the OpenRequest.
+         * Sets the treasurehunt.com.treasurehunt.login behavior for the OpenRequest.
          *
          * @param loginBehavior The {@link SessionLoginBehavior SessionLoginBehavior} that
          *                      specifies what behaviors should be attempted during
@@ -2192,7 +2192,7 @@ public class Session implements Serializable {
         /**
          * Sets the defaultAudience for the OpenRequest.
          * <p/>
-         * This is only used during Native login using a sufficiently recent facebook app.
+         * This is only used during Native treasurehunt.com.treasurehunt.login using a sufficiently recent facebook app.
          *
          * @param defaultAudience A SessionDefaultAudience representing the default audience setting to request.
          * @return the OpenRequest object to allow for chaining
@@ -2267,7 +2267,7 @@ public class Session implements Serializable {
         }
 
         /**
-         * Sets the login behavior for the NewPermissionsRequest.
+         * Sets the treasurehunt.com.treasurehunt.login behavior for the NewPermissionsRequest.
          *
          * @param loginBehavior The {@link SessionLoginBehavior SessionLoginBehavior} that
          *                      specifies what behaviors should be attempted during

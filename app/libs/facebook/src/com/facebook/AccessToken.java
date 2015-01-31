@@ -37,7 +37,7 @@ import java.util.*;
  * useful to deal with access tokens directly. Factory methods are provided to construct access tokens.
  * <p/>
  * For more information on access tokens, see
- * <a href="https://developers.facebook.com/docs/facebook-login/access-tokens/">Access Tokens</a>.
+ * <a href="https://developers.facebook.com/docs/facebook-treasurehunt.com.treasurehunt.login/access-tokens/">Access Tokens</a>.
  */
 public final class AccessToken implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -95,7 +95,7 @@ public final class AccessToken implements Serializable {
      * Gets the list of permissions associated with this access token. Note that the most up-to-date
      * list of permissions is maintained by the Facebook service, so this list may be outdated if
      * permissions have been added or removed since the time the AccessToken object was created. For
-     * more information on permissions, see https://developers.facebook.com/docs/reference/login/#permissions.
+     * more information on permissions, see https://developers.facebook.com/docs/reference/treasurehunt.com.treasurehunt.login/#permissions.
      *
      * @return a read-only list of strings representing the permissions granted via this access token
      */

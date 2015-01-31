@@ -69,7 +69,7 @@ public class AsyncFacebookRunner {
      *
      * @param context
      *            The Android context in which the logout should be called: it
-     *            should be the same context in which the login occurred in
+     *            should be the same context in which the treasurehunt.com.treasurehunt.login occurred in
      *            order to clear any stored cookies
      * @param listener
      *            Callback interface to notify the application when the request

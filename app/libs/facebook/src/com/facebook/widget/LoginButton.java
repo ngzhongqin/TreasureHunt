@@ -294,7 +294,7 @@ public class LoginButton extends Button {
     /**
      * Sets the default audience to use when the session is opened.
      * This value is only useful when specifying write permissions for the native
-     * login dialog.
+     * treasurehunt.com.treasurehunt.login dialog.
      *
      * @param defaultAudience the default audience value to use
      */
@@ -305,7 +305,7 @@ public class LoginButton extends Button {
     /**
      * Gets the default audience to use when the session is opened.
      * This value is only useful when specifying write permissions for the native
-     * login dialog.
+     * treasurehunt.com.treasurehunt.login dialog.
      *
      * @return the default audience value to use
      */
@@ -315,7 +315,7 @@ public class LoginButton extends Button {
 
     /**
      * Set the permissions to use when the session is opened. The permissions here
-     * can only be read permissions. If any publish permissions are included, the login
+     * can only be read permissions. If any publish permissions are included, the treasurehunt.com.treasurehunt.login
      * attempt by the user will fail. The LoginButton can only be associated with either
      * read permissions or publish permissions, but not both. Calling both
      * setReadPermissions and setPublishPermissions on the same instance of LoginButton
@@ -340,7 +340,7 @@ public class LoginButton extends Button {
 
     /**
      * Set the permissions to use when the session is opened. The permissions here
-     * can only be read permissions. If any publish permissions are included, the login
+     * can only be read permissions. If any publish permissions are included, the treasurehunt.com.treasurehunt.login
      * attempt by the user will fail. The LoginButton can only be associated with either
      * read permissions or publish permissions, but not both. Calling both
      * setReadPermissions and setPublishPermissions on the same instance of LoginButton
@@ -366,7 +366,7 @@ public class LoginButton extends Button {
 
     /**
      * Set the permissions to use when the session is opened. The permissions here
-     * should only be publish permissions. If any read permissions are included, the login
+     * should only be publish permissions. If any read permissions are included, the treasurehunt.com.treasurehunt.login
      * attempt by the user may fail. The LoginButton can only be associated with either
      * read permissions or publish permissions, but not both. Calling both
      * setReadPermissions and setPublishPermissions on the same instance of LoginButton
@@ -392,7 +392,7 @@ public class LoginButton extends Button {
 
     /**
      * Set the permissions to use when the session is opened. The permissions here
-     * should only be publish permissions. If any read permissions are included, the login
+     * should only be publish permissions. If any read permissions are included, the treasurehunt.com.treasurehunt.login
      * attempt by the user may fail. The LoginButton can only be associated with either
      * read permissions or publish permissions, but not both. Calling both
      * setReadPermissions and setPublishPermissions on the same instance of LoginButton
@@ -425,7 +425,7 @@ public class LoginButton extends Button {
     }
 
     /**
-     * Sets the login behavior for the session that will be opened. If null is specified,
+     * Sets the treasurehunt.com.treasurehunt.login behavior for the session that will be opened. If null is specified,
      * the default ({@link SessionLoginBehavior SessionLoginBehavior.SSO_WITH_FALLBACK}
      * will be used.
      *
@@ -438,7 +438,7 @@ public class LoginButton extends Button {
     }
 
     /**
-     * Gets the login behavior for the session that will be opened. If null is returned,
+     * Gets the treasurehunt.com.treasurehunt.login behavior for the session that will be opened. If null is returned,
      * the default ({@link SessionLoginBehavior SessionLoginBehavior.SSO_WITH_FALLBACK}
      * will be used.
      *
@@ -789,7 +789,7 @@ public class LoginButton extends Button {
 
     /**
      * Allow a developer to set the OnClickListener for the button.  This will be called back after we do any handling
-     * internally for login
+     * internally for treasurehunt.com.treasurehunt.login
      * @param clickListener
      */
     @Override
